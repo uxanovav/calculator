@@ -26,10 +26,21 @@ main {
 .screen {
   width: auto;
   height: 100px;
+  padding: 10px;
+  text-align: end;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
   background-color: rgb(231, 231, 231);
   border-radius: 5%;
   box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
     1px 1px 5px rgba(255, 255, 255, 1);
+}
+
+.screen-value {
+    width: 99%;
+    font-size: 48px;
+    text-align: right;
 }
 
 .calc-buttons {
@@ -40,7 +51,7 @@ main {
     "one two three multiply"
     "four five six plus"
     "seven eight nine minus"
-    "dott zzero eq eq";
+    "dott zzero equ equ";
     grid-gap: 1vw;
 }
 td {
@@ -72,8 +83,8 @@ td {
     grid-area: minus;
 }
 
-#eq {
-    grid-area: eq;
+#equ {
+    grid-area: equ;
 }
 
 #dott {
@@ -122,16 +133,17 @@ td {
 
 .button {
     width: auto;
-    padding-top: 35px;
+    padding-top: 15px;
     height: 70px;
     background-color:rgb(176, 255, 255);
-    border-radius: 5%;
+    border-radius: 20px;
     text-align: center;
     box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
     1px 1px 5px rgba(255, 255, 255, 1);
     color: black;
     font-weight: 700;
-    font-size: large;
+    font-size: 48px;
+    user-select: none;
 }
 
 .button-number:hover {
@@ -152,5 +164,13 @@ td {
 }
 
 .button-option:hover {
+    background-color: rgb(2, 85, 2);
+}
+
+.button-eq {
+    background-color: rgb(44, 255, 44);
+}
+
+.button-eq:hover {
     background-color: rgb(2, 85, 2);
 }
