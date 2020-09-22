@@ -41,17 +41,25 @@ ac.addEventListener('click', function (e){
 c.addEventListener('click', function (e){
     current = current.substring(0, current.length - 1);
     screen.value = current;
+    result = resultScreen.innerHTML.substring(0,resultScreen.innerHTML.length - 1);
     resultScreen.innerHTML = result;
 });
 
 eq.addEventListener('click', function (e) {
-    onEqPress(a,current,action);
+    a = onEqPress(a,current,action);
     resultScreen.innerHTML = result;
 });
 
 screen.addEventListener('oninput', function (e) {
     resultScreen.innerHTML = screen.value;
 })
+
+
+document.addEventListener('keypress', function(e) {
+    let keyboardValue = ` ${e.code}`;
+    console.log(keyboardValue);
+    numberPress('one');
+});
 
 function numberPress (id) {
     switch(id){
@@ -113,27 +121,25 @@ function onEqPress(a,total,action){
     b = total;
     if (action === 'plus'){
         total = Number(a) + Number(b);
-        b = '';
         a = total.toString();
         screen.value = total.toString();
     }
     if (action === 'minus'){
         total = Number(a) - Number(b);
-        b = '';
         a = total.toString();
         screen.value = total.toString();
     }
     if (action === 'multiply'){
         total = Number(a) * Number(b);
-        b = '';
         a = total.toString();
         screen.value = total.toString();
     }
     if (action === 'divide'){
         total = Number(a) / Number(b);
-        b = '';
         a = total.toString();
         screen.value = total.toString();
     }
     result += ' = ' + a + ' ';
+    console.log(a);
+    return a;
 }
