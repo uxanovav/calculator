@@ -38,6 +38,8 @@ main {
 }
 
 .screen-value {
+    font-weight: 900;
+    color: rgb(64, 58, 109);
     width: 99%;
     font-size: 48px;
     text-align: right;

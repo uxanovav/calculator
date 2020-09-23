@@ -55,12 +55,6 @@ screen.addEventListener('oninput', function (e) {
 })
 
 
-document.addEventListener('keypress', function(e) {
-    let keyboardValue = ` ${e.code}`;
-    console.log(keyboardValue);
-    numberPress('one');
-});
-
 function numberPress (id) {
     switch(id){
         case 'one':
